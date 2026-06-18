@@ -8,12 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
-        /* all your styles here */
-    </style>
-</head>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <style>
         /* ===== RESET & BASE ===== */
         * {
             margin: 0;
@@ -266,20 +260,32 @@
             color: rgba(255, 255, 255, 0.3);
             font-weight: 400;
         }
-        .top-header .header-nav {
+
+        /* ===== SEPARATE NAVIGATION BOX ===== */
+        .nav-box {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 50px;
+            padding: 10px 24px;
             display: flex;
             gap: 28px;
             align-items: center;
+            transition: all 0.3s ease;
         }
-        .top-header .header-nav a {
-            color: rgba(255, 255, 255, 0.3);
+        .nav-box:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .nav-box a {
+            color: rgba(255, 255, 255, 0.4);
             text-decoration: none;
             font-size: 13px;
             font-weight: 500;
             transition: color 0.3s ease;
             letter-spacing: 0.3px;
         }
-        .top-header .header-nav a:hover {
+        .nav-box a:hover {
             color: #ffffff;
         }
 
@@ -781,16 +787,20 @@
         .project-card:hover .project-image img {
             transform: scale(1.03);
         }
+        /* Colorful project titles */
         .project-card h3 {
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 8px;
-            color: #ffffff;
             text-decoration: underline;
             text-underline-offset: 4px;
-            text-decoration-color: rgba(255, 255, 255, 0.2);
             text-decoration-thickness: 2px;
         }
+        .project-card:nth-child(1) h3 { color: #ff6b6b; text-decoration-color: #ff6b6b; }
+        .project-card:nth-child(2) h3 { color: #feca57; text-decoration-color: #feca57; }
+        .project-card:nth-child(3) h3 { color: #54a0ff; text-decoration-color: #54a0ff; }
+        .project-card:nth-child(4) h3 { color: #1dd1a1; text-decoration-color: #1dd1a1; }
+
         .project-card p {
             color: rgba(255, 255, 255, 0.4);
             font-size: 14px;
@@ -855,12 +865,19 @@
             color: rgba(255, 255, 255, 0.25);
             margin-bottom: 8px;
         }
+        /* Colorful certification subheadings */
         .cert-card h4 {
             font-size: 17px;
             font-weight: 600;
-            color: #ffffff;
             margin-bottom: 2px;
         }
+        .cert-card:nth-child(1) h4 { color: #ff6b6b; }
+        .cert-card:nth-child(2) h4 { color: #54a0ff; }
+        .cert-card:nth-child(3) h4 { color: #1dd1a1; }
+        .cert-card:nth-child(4) h4 { color: #feca57; }
+        .cert-card:nth-child(5) h4 { color: #a29bfe; }
+        .cert-card:nth-child(6) h4 { color: #fd79a8; }
+
         .cert-card .issuer {
             color: rgba(255, 255, 255, 0.3);
             font-size: 13px;
@@ -1123,7 +1140,7 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 992px) {
-            .top-header .header-nav { display: none; }
+            .nav-box { display: none; }
             .hamburger { display: flex; }
             .hero-content { grid-template-columns: 1fr; text-align: center; gap: 40px; }
             .hero-text .about-card { text-align: left; }
@@ -1195,7 +1212,8 @@
     <!-- ===== TOP HEADER ===== -->
     <header class="top-header">
         <div class="logo">Srikari Maddikunta <span>| Portfolio</span></div>
-        <nav class="header-nav">
+        <!-- SEPARATE NAVIGATION BOX -->
+        <nav class="nav-box">
             <a href="#hero">Home</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
@@ -1476,19 +1494,19 @@
                 <div class="edu-item reveal-left" style="transition-delay:0.05s;">
                     <h3>B.Tech in CSE (AI &amp; ML)</h3>
                     <p class="edu-institution">Keshav Memorial Institute of Technology</p>
-                    <p class="edu-date">2022 – Present</p>
+                    <p class="edu-date">2023 – Present</p>
                     <span class="edu-score">GPA: 7.65/10</span>
                 </div>
                 <div class="edu-item reveal-left" style="transition-delay:0.15s;">
                     <h3>Intermediate (Class 12)</h3>
                     <p class="edu-institution">Sri Chaitanya Junior College</p>
-                    <p class="edu-date">2020 – 2022</p>
+                    <p class="edu-date">2021 – 2023</p>
                     <span class="edu-score">Score: 92%</span>
                 </div>
                 <div class="edu-item reveal-left" style="transition-delay:0.25s;">
                     <h3>SSC (Class 10)</h3>
                     <p class="edu-institution">St. Anna's High School</p>
-                    <p class="edu-date">2010 – 2020</p>
+                    <p class="edu-date">2020 – 2021</p>
                     <span class="edu-score">Score: 10.0 GPA</span>
                 </div>
             </div>
